@@ -1,0 +1,32 @@
+{
+	"bridge": {
+		"name": "Sids Pi Homebridge",
+		"username": "CD:22:3D:E3:CE:30",
+		"port": 51826,
+		"pin": "031-45-156"
+	},
+
+	"description": "Smart Lamp and Weather Station Demo",
+
+	"accessories": [
+		{
+			"accessory": "Http",
+			"name": "Lamp",
+			"switchHandling": "realtime",
+			"http_method": "GET",
+			"on_url": "http://192.168.1.100/lamp/on",
+			"off_url": "http://192.168.1.100/lamp/off",
+			"status_url": "http://192.168.1.100/lamp",
+			"service": "Light",
+			"brightnessHandling": "no"
+		},
+		{
+          		 "accessory": "HttpTemphum",
+         		 "name": "Kitchen Weather",
+           		 "url": "http://192.168.1.99/weather",
+              	         "sendimmediately": "",
+           		 "http_method": "GET"
+       		}
+		
+	]
+}
